@@ -1,5 +1,7 @@
 package cz.nefrite.util.checking;
 
+import java.util.Collection;
+
 /**
  * Množina pravidel reakcí na dané chybové stavy.
  * @author Jirka Drozd
@@ -39,4 +41,14 @@ public interface CheckRules {
 	 * @param errorID číslo chyby převzaté z kontrolující metody
 	 */
 	public void nullFatal(int errorID);
+
+	public void isEmpty();
+
+	public void isEmpty(String msg);
+
+	public void emptyFatal(Collection c);
+
+	public void emptyFatal(Collection c, int errorID);
+	
+	public void emptyFatal(Collection c, String msg);
 }

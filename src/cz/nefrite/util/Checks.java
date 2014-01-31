@@ -2,6 +2,7 @@ package cz.nefrite.util;
 
 import cz.nefrite.util.checking.CheckRules;
 import cz.nefrite.util.checking.NoSpecialRules;
+import java.util.Collection;
 
 /**
  * Třída, jež definuje chybové stavy a umožňuje změnu pravidel reakcí.
@@ -92,6 +93,81 @@ public class Checks {
 		if (obj == null) {
 			rules.nullFatal(msg);
 			throw new NullPointerException(msg);
+		}
+	}
+
+	/**
+	 * Zkontroluje danou kolekci, zda není prázdná. Reaguje podle nastavených pravidel.
+	 * @param c Kontrolovaná kolekce
+	 * @return Vrací {@code true} pokud kolekce obsahuje nějaké prvky.
+	 */
+	public static boolean isNotEmpty(Collection c) {
+		if (c.isEmpty()) {
+			rules.isEmpty();
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Zkontroluje danou kolekci, zda není prázdná. Reaguje podle nastavených pravidel.
+	 * @param c   Kontrolovaná kolekce
+	 * @param msg Zpráva případné chybové hlášky.
+	 * @return Vrací {@code true} pokud kolekce obsahuje nějaké prvky.
+	 */
+	public static boolean isNotEmpty(Collection c, String msg) {
+		if (c.isEmpty()) {
+			rules.isEmpty(msg);
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Provede test na existenci objektu
+	 * ({@link cz.nefrite.util.Checks#nullFatal(java.lang.Object)}), následně pak kolekci
+	 * zkontroluje, zda obsahuje nějaké prvky.
+	 * @param c Kontrolovaná kolekce
+	 * @throws IllegalStateException Vyhodí vyjímku
+	 *                                  {@link java.lang.IllegalStateException},
+	 *                                  pokud pravidla neurčí jiný typ.
+	 */
+	public static void emptyFatal(Collection c) {
+		nullFatal(c);
+		if (c.isEmpty()) {
+			rules.emptyFatal(c);
+			throw new IllegalStateException();
+		}
+	}
+
+	/**
+	 * Provede test na existenci objektu ({@link cz.nefrite.util.Checks#nullFatal(java.lang.Object, int), následně pak kolekci
+	 * zkontroluje, zda obsahuje nějaké prvky.
+	 * @param c       Kontrolovaná kolekce
+	 * @param errorID Číslo chyby(pokud bude daný objekt {@code null} bude číslo chyby postoupeno kontrolující mětodě).
+	 * @throws IllegalStateException Vyhodí vyjímku
+	 *                                  {@link java.lang.IllegalStateException},
+	 *                                  pokud pravidla neurčí jiný typ.
+	 */
+	public static void emptyFatal(Collection c, int errorID) {
+		nullFatal(c, errorID);
+		if (c.isEmpty()) {
+			rules.emptyFatal(c, errorID);
+			throw new IllegalStateException("Fatal Error: " + errorID);
+		}
+	}
+
+	/**
+	 * Provede test na existenci objektu ({@link cz.nefrite.util.Checks#nullFatal(java.lang.Object, java.lang.String), následně pak kolekci
+	 * zkontroluje, zda obsahuje nějaké prvky.
+	 * @param c   Kontrolovaná kolekce
+	 * @param msg Zpráva případné chybové hlášky.
+	 */
+	public static void emptyFatal(Collection c, String msg) {
+		nullFatal(c, msg);
+		if (c.isEmpty()) {
+			rules.emptyFatal(c, msg);
+			throw new IllegalStateException(msg);
 		}
 	}
 }
