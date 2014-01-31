@@ -33,7 +33,7 @@ public class Errors extends LogLevel {
 
 	/** {@inheritDoc } */
 	@Override
-	public void warn(String msg, Exception ex) {
+	public void warn(String msg, Exception e) {
 		// prikaz teto urovne neni logovan
 	}
 	

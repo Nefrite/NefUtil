@@ -90,7 +90,8 @@ public class Maths extends MoreMath {
 	
 	/**
 	 * Funkce kosinu pomocí optimalizační tabulky.
-	 * @param úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @param angle úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @return sinus úhlu 
 	 */
 	public static float sin(double angle) {
 		return sin(angleConvert((float)angle));
@@ -98,7 +99,8 @@ public class Maths extends MoreMath {
 	
 	/**
 	 * Funkce kosinu pomocí optimalizační tabulky.
-	 * @param úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @param angle úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @return sinus úhlu 
 	 */
 	public static float sin(float angle) {
 		return sin(angleConvert(angle));
@@ -106,7 +108,8 @@ public class Maths extends MoreMath {
 	
 	/**
 	 * Funkce kosinu pomocí optimalizační tabulky.
-	 * @param úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @param angle úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @return kosinus úhlu 
 	 */
 	public static float cos(double angle) {
 		return cos(angleConvert((float)angle));
@@ -114,7 +117,8 @@ public class Maths extends MoreMath {
 	
 	/**
 	 * Funkce kosinu pomocí optimalizační tabulky.
-	 * @param úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @param angle úhel v radiánech v rozsahu {@code 0} až {@code 2PI}
+	 * @return kosinus úhlu
 	 */
 	public static float cos(float angle) {
 		return cos(angleConvert(angle));

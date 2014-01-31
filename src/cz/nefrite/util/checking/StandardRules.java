@@ -6,6 +6,7 @@ package cz.nefrite.util.checking;
  */
 public class StandardRules implements CheckRules {
 
+	/** Standardní zpráva pro výskyt hodnoty {@code null} */
 	public static final String IS_NULL_MSG = "The Object can not be null!";
 	
 	/** {@inheritDoc } */

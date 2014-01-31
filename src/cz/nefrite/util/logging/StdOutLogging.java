@@ -98,39 +98,39 @@ public class StdOutLogging implements LogSystem {
 	
 	/** {@inheritDoc } */
 	@Override
-	public void debug(String message) {
-		out.printf(MASK, df.format(new Date()), "DEBUG: " + getSourceDynamicaly() + " > " + message);
+	public void debug(String msg) {
+		out.printf(MASK, df.format(new Date()), "DEBUG: " + getSourceDynamicaly() + " > " + msg);
 	}
 
 	/** {@inheritDoc } */
 	@Override
-	public void info(String message) {
-		out.printf(MASK, df.format(new Date()), "INFO: " + message);
+	public void info(String msg) {
+		out.printf(MASK, df.format(new Date()), "INFO: " + msg);
 	}
 
 	/** {@inheritDoc } */
 	@Override
-	public void warn(String message) {
-		out.printf(MASK, df.format(new Date()), "WARNING: " + getSourceDynamicaly() + " > " + message);
+	public void warn(String msg) {
+		out.printf(MASK, df.format(new Date()), "WARNING: " + getSourceDynamicaly() + " > " + msg);
 	}
 
 	/** {@inheritDoc } */
 	@Override
-	public void warn(String message, Exception e) {
-		out.printf(MASK, df.format(new Date()), "WARNING: " + getSourceDynamicaly() + " > " + message);
+	public void warn(String msg, Exception e) {
+		out.printf(MASK, df.format(new Date()), "WARNING: " + getSourceDynamicaly() + " > " + msg);
 		out.printf(MASK, df.format(new Date()), "WARNING: " + e.getClass().getSimpleName() + ": " + e.getMessage());
 	}
 
 	/** {@inheritDoc } */
 	@Override
-	public void error(String message) {
-		out.printf(MASK, df.format(new Date()), "ERROR: " + getSourceDynamicaly() + " > " + message);
+	public void error(String msg) {
+		out.printf(MASK, df.format(new Date()), "ERROR: " + getSourceDynamicaly() + " > " + msg);
 	}
 
 	/** {@inheritDoc } */
 	@Override
-	public void error(String message, Exception e) {
-		out.printf(MASK, df.format(new Date()), "ERROR: " + message);
+	public void error(String msg, Exception e) {
+		out.printf(MASK, df.format(new Date()), "ERROR: " + msg);
 		e.printStackTrace(out);
 	}
 

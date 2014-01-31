@@ -9,9 +9,6 @@ public abstract class LogLevel implements LogSystem {
 
 	private static LogSystem logger;
 
-	public LogLevel() {
-	}
-
 	/**
 	 * Nastavení Logovacího systému pro všechny úrovně logování
 	 * @param logs Logovací systém
@@ -49,8 +46,8 @@ public abstract class LogLevel implements LogSystem {
 
 	/** {@inheritDoc } */
 	@Override
-	public void warn(String msg, Exception ex) {
-		logger.warn(msg, ex);
+	public void warn(String msg, Exception e) {
+		logger.warn(msg, e);
 	}
 
 	/** {@inheritDoc } */

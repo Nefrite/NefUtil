@@ -32,7 +32,7 @@ public class NullLog extends LogLevel {
 
 	/** {@inheritDoc } */
 	@Override
-	public void warn(String msg, Exception ex) {
+	public void warn(String msg, Exception e) {
 		// neni logovano
 	}
 
